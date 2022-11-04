@@ -1,0 +1,23 @@
+*,
+body,
+html {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+h1 {
+  font-size: 5rem;
+}
+h2 {
+  font-size: 3rem;
+}
+img {
+  max-width: 30%;
+  max-height: 30%;
+}
+
+#box {
+  font-size: 3rem;
+}
