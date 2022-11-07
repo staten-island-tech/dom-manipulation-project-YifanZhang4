@@ -2,31 +2,24 @@ console.log("connected :)");
 
 const DOMSelectors = {
   button: document.getElementById("button"),
+  buttonA: document.getElementById("buttona"),
   input: document.getElementById("input"),
   box: document.getElementById("box"),
+  img: document.getElementById("img"),
 };
 console.log(DOMSelectors);
 
-// function objectCreate() {
-//   const operator = {
-//     aliveOrNot: "alive",
-//     printIntroduction: function () {
-//       DOMSelectors.box.insertAdjacentHTML(
-//         "beforeend",
-//         `<p>My name is ${this.name}. I am ${this.aliveOrNot} and seriously unhappy to be working with you, Doctor.</p>`
-//       );
-//     },
-//   };
-//   const recruitment = Object.create(operator);
+function what() {
+  DOMSelectors.button.addEventListener("click", function () {
+    const input = DOMSelectors.input.value;
+    DOMSelectors.box.insertAdjacentHTML("beforeend", `<p>${input}</p>`);
+    DOMSelectors.input.value = "";
+    SVGAnimateMotionElement;
+  });
 
-//   recruitment.name = "W";
-//   recruitment.aliveOrNot = "alive";
-//   recruitment.printIntroduction();
-// }
+  DOMSelectors.buttonA.addEventListener("click", function () {
+    delete DOMSelectors.input.value;
+  });
+}
 
-// objectCreate();
-// DOMSelectors.button.addEventListener("click", function () {
-//   let input = DOMSelectors.input.value;
-//   DOMSelectors.box.insertAdjacentHTML("beforeend", `<p>${input}</p>`);
-//   DOMSelectors.input.value = "";
-// });
+what();
