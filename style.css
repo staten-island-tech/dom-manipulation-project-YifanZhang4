@@ -18,6 +18,9 @@ img {
   max-height: 30%;
 }
 
+form {
+  font-size: 3rem;
+}
 #box {
   font-size: 3rem;
 }
