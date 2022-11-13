@@ -6,31 +6,31 @@ const DOMSelectors = {
   age: document.getElementById("age"),
   location: document.getElementById("location"),
   box: document.getElementById("box"),
-  ew: document.getElementById("ew"),
 };
 console.log(DOMSelectors);
 
-function user(name, age, location) {
-  this.name = name;
-  this.age = age;
-  this.location = location;
-}
-
-document.getElementById("form").addEventListener("submit", function (insert) {
-  insert.preventDefault;
-  document.getElementById("name").value;
-  document.getElementById("age").value;
-  document.getElementById("location").value;
-  DOMSelectors.submit.addEventListener(
-    "click",
-    function createCard(name, age, location) {
-      let newCardContain = document.createElement("div");
-      let newCard = document.createTextNode("bleh");
-      newCardContain.appendChild(newCard);
-      let cardInsert = document.getElementById("box");
-      document.body.insertBefore(newCardContain, cardInsert);
-    }
-  );
+DOMSelectors.button.addEventListener("click", function (card) {
+  card.preventDefault()
+  let name = DOMSelectors.name.value;
+  let age = DOMSelectors.age.value;
+  let location = DOMSelectors.location.value;
+  function makeCard() {
+    DOMSelectors.box.insertAdjacentHTML(
+      "beforeend",
+      `<div class="contain">
+    <img src="user icon.jpg">
+    <h2>Name: ${name}</h2>
+    <br />
+    <h2>Age: ${age} years old</h2>
+    <br />
+    <h2>At: ${location}</h2>
+    <br />
+    <button onclick="removeParent(this.parentNode)>Erase</button></div>`
+    );
+  }
+  makeCard()
 });
 
-createCard();
+function removeParent(card) {
+  card.remove();
+}
