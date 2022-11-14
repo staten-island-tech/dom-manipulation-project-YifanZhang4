@@ -5,6 +5,7 @@ html {
   margin: 0;
   box-sizing: border-box;
   font-size: 62.5%;
+  font-family: wingdings;
 }
 
 h1 {
@@ -37,6 +38,23 @@ h2 {
   animation-iteration-count: infinite;
 }
 
+.gaster {
+  max-width: 5%;
+  max-height: 5%;
+  opacity: 0;
+}
+.gaster:hover {
+  animation: fadeIn 5s;
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
 form {
   font-size: 3rem;
 }
@@ -47,12 +65,23 @@ form {
 .contain {
   display: flex;
   flex-flow: row wrap;
+  padding: 20px 20px;
+  margin: 40px 40px;
   justify-content: center;
   row-gap: 50px;
   align-content: center;
   border-radius: 15px;
   text-align: center;
-  font-size: 2rem;
   background-color: #f2f2f2;
   box-shadow: 0px 12px 22px 4px #202e42;
+}
+
+.user {
+  max-width: 200%;
+  max-height: 200%;
+  align-content: center;
+}
+
+h3 {
+  font-size: 5rem;
 }

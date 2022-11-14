@@ -10,7 +10,7 @@ const DOMSelectors = {
 console.log(DOMSelectors);
 
 DOMSelectors.button.addEventListener("click", function (card) {
-  card.preventDefault()
+  card.preventDefault();
   let name = DOMSelectors.name.value;
   let age = DOMSelectors.age.value;
   let location = DOMSelectors.location.value;
@@ -18,17 +18,21 @@ DOMSelectors.button.addEventListener("click", function (card) {
     DOMSelectors.box.insertAdjacentHTML(
       "beforeend",
       `<div class="contain">
-    <img src="user icon.jpg">
-    <h2>Name: ${name}</h2>
+    <img src="user icon.jpg" class="user">
     <br />
-    <h2>Age: ${age} years old</h2>
+    <h3>Name: ${name}</h3>
     <br />
-    <h2>At: ${location}</h2>
+    <h3>Age: ${age} years old</h3>
     <br />
-    <button onclick="removeParent(this.parentNode)>Erase</button></div>`
+    <h3>At: ${location}</h3>
+    <br />
+    <button onclick="removeParent(this.parentNode)" class="erase">Erase</button> </div>`
     );
+    DOMSelectors.name.value = "";
+    DOMSelectors.age.value = "";
+    DOMSelectors.location.value = "";
   }
-  makeCard()
+  makeCard();
 });
 
 function removeParent(card) {
