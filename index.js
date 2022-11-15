@@ -19,13 +19,10 @@ DOMSelectors.button.addEventListener("click", function (card) {
       "beforeend",
       `<div class="contain">
     <img src="user icon.jpg" class="user">
-    <br />
     <h3>Name: ${name}</h3>
     <br />
     <h3>Age: ${age} years old</h3>
-    <br />
     <h3>At: ${location}</h3>
-    <br />
     <button onclick="removeParent(this.parentNode)" class="erase">Erase</button> </div>`
     );
     DOMSelectors.name.value = "";

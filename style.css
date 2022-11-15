@@ -5,7 +5,6 @@ html {
   margin: 0;
   box-sizing: border-box;
   font-size: 62.5%;
-  font-family: wingdings;
 }
 
 h1 {
@@ -39,20 +38,28 @@ h2 {
 }
 
 .gaster {
-  max-width: 5%;
-  max-height: 5%;
-  opacity: 0;
+  display: inline-block;
+  max-width: 15%;
+  max-height: 15%;
+  vertical-align: middle;
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
 }
-.gaster:hover {
-  animation: fadeIn 5s;
+@-webkit-keyframes boo {
+  50% {
+    transform: scale(3);
+  }
 }
-@keyframes fadeIn {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
+.gaster:hover,
+.gaster:focus,
+.gaster:active {
+  animation-name: boo;
+  animation-duration: 0.3s;
+  animation-timing-function: linear;
+  animation-iteration-count: 1;
+}
+.WD {
+  font-size: 2rem;
 }
 
 form {
@@ -66,7 +73,7 @@ form {
   display: flex;
   flex-flow: row wrap;
   padding: 20px 20px;
-  margin: 40px 40px;
+  margin: 50px 50px;
   justify-content: center;
   row-gap: 50px;
   align-content: center;
@@ -74,14 +81,25 @@ form {
   text-align: center;
   background-color: #f2f2f2;
   box-shadow: 0px 12px 22px 4px #202e42;
+  font-size: 6rem;
 }
 
 .user {
   max-width: 200%;
   max-height: 200%;
-  align-content: center;
+  display: inline-block;
+  vertical-align: middle;
 }
 
 h3 {
-  font-size: 5rem;
+  font-size: 3rem;
+  flex-direction: column;
+  justify-content: center;
+}
+
+label {
+  font-size: 2rem;
+}
+input {
+  font-size: 2rem;
 }

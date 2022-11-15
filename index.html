@@ -20,6 +20,16 @@
       alt="W.D.Gaster from hit 2015 game Undertale"
       class="gaster"
     />
+    <button class="WD" onclick="changeStyle()">Click me, if you're cool</button>
+    <script>
+      function changeStyle() {
+        const addCSS = (css) =>
+          (document.head.appendChild(
+            document.createElement("style")
+          ).innerHTML = css);
+        addCSS("body{ font-family:wingdings }");
+      }
+    </script>
     <br />
     <br />
     <form id="form">
