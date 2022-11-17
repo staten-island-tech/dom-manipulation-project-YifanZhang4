@@ -6,6 +6,8 @@ const DOMSelectors = {
   age: document.getElementById("age"),
   location: document.getElementById("location"),
   box: document.getElementById("box"),
+  wd: document.getElementById("wd"),
+  erase: document.getElementById("erase"),
 };
 console.log(DOMSelectors);
 
@@ -17,13 +19,13 @@ DOMSelectors.button.addEventListener("click", function (card) {
   function makeCard() {
     DOMSelectors.box.insertAdjacentHTML(
       "beforeend",
-      `<div class="contain">
+      `<div class="contain" id="card">
     <img src="user icon.jpg" class="user">
     <h3>Name: ${name}</h3>
     <br />
     <h3>Age: ${age} years old</h3>
     <h3>At: ${location}</h3>
-    <button onclick="removeParent(this.parentNode)" class="erase">Erase</button> </div>`
+    <button id="erase" class="erase">Erase</button> </div>`
     );
     DOMSelectors.name.value = "";
     DOMSelectors.age.value = "";
@@ -32,6 +34,14 @@ DOMSelectors.button.addEventListener("click", function (card) {
   makeCard();
 });
 
-function removeParent(card) {
+DOMSelectors.wd.addEventListener("click", function () {
+  const addCSS = (css) =>
+    (document.head.appendChild(document.createElement("style")).innerHTML =
+      css);
+  addCSS("body{ font-family:wingdings }");
+});
+
+DOMSelectors.erase.addEventListener("click", function () {
+  const card = document.getElementById("card");
   card.remove();
-}
+});
