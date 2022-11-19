@@ -45,7 +45,7 @@ h2 {
   transform: perspective(1px) translateZ(0);
   box-shadow: 0 0 1px rgba(0, 0, 0, 0);
 }
-@-webkit-keyframes boo {
+@keyframes boo {
   50% {
     transform: scale(3);
   }

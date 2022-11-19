@@ -7,7 +7,6 @@ const DOMSelectors = {
   location: document.getElementById("location"),
   box: document.getElementById("box"),
   wd: document.getElementById("wd"),
-  erase: document.getElementById("erase"),
 };
 console.log(DOMSelectors);
 
@@ -19,29 +18,32 @@ DOMSelectors.button.addEventListener("click", function (card) {
   function makeCard() {
     DOMSelectors.box.insertAdjacentHTML(
       "beforeend",
-      `<div class="contain" id="card">
+      `<div id="card" class="contain">
     <img src="user icon.jpg" class="user">
     <h3>Name: ${name}</h3>
     <br />
     <h3>Age: ${age} years old</h3>
-    <h3>At: ${location}</h3>
-    <button id="erase" class="erase">Erase</button> </div>`
+    <h3 class="city">At: ${location}</h3>
+    <button id="erase">Erase</button> </div>`
     );
     DOMSelectors.name.value = "";
     DOMSelectors.age.value = "";
     DOMSelectors.location.value = "";
   }
-  makeCard();
-});
+  makeCard();  
+  function getErase() {
+  let remove = document.getElementById("erase");
+  let card = document.getElementById("card");
+  remove.addEventListener("click", function () {
+    card.remove();
+  });
+  getErase();
+};
+
 
 DOMSelectors.wd.addEventListener("click", function () {
   const addCSS = (css) =>
     (document.head.appendChild(document.createElement("style")).innerHTML =
       css);
   addCSS("body{ font-family:wingdings }");
-});
-
-DOMSelectors.erase.addEventListener("click", function () {
-  const card = document.getElementById("card");
-  card.remove();
 });
