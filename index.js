@@ -23,27 +23,27 @@ DOMSelectors.button.addEventListener("click", function (card) {
     <h3>Name: ${name}</h3>
     <br />
     <h3>Age: ${age} years old</h3>
-    <h3 class="city">At: ${location}</h3>
+    <h3 id="city">At: ${location}</h3>
     <button id="erase">Erase</button> </div>`
     );
     DOMSelectors.name.value = "";
     DOMSelectors.age.value = "";
     DOMSelectors.location.value = "";
-  }
-  makeCard();  
-  function getErase() {
-  let remove = document.getElementById("erase");
-  let card = document.getElementById("card");
-  remove.addEventListener("click", function () {
-    card.remove();
-  });
-  getErase();
-};
-
+  };
+  function erase() {
+    let remove = document.getElementById("erase");
+    let card = document.getElementById("card")
+    remove.addEventListener("click", function () {
+      card.remove();
+    });
+    };
+  makeCard();
+  erase();    
+});
 
 DOMSelectors.wd.addEventListener("click", function () {
   const addCSS = (css) =>
     (document.head.appendChild(document.createElement("style")).innerHTML =
       css);
-  addCSS("body{ font-family:wingdings }");
+  addCSS("body{ font-family:wingdings }")
 });
