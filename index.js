@@ -32,7 +32,7 @@ DOMSelectors.button.addEventListener("click", function (card) {
   };
   function erase() {
     let remove = document.getElementById("erase");
-    let card = document.getElementById("card")
+    let card = document.getElementById("card");
     remove.addEventListener("click", function () {
       card.remove();
     });
