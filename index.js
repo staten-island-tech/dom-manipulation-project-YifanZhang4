@@ -18,32 +18,32 @@ DOMSelectors.button.addEventListener("click", function (card) {
   function makeCard() {
     DOMSelectors.box.insertAdjacentHTML(
       "beforeend",
-      `<div id="card" class="contain">
+      `<div class="contain">
     <img src="user icon.jpg" class="user">
     <h3>Name: ${name}</h3>
-    <br />
     <h3>Age: ${age} years old</h3>
     <h3 id="city">At: ${location}</h3>
-    <button id="erase">Erase</button> </div>`
+    <button class="erase">Erase</button> </div>`
     );
     DOMSelectors.name.value = "";
     DOMSelectors.age.value = "";
     DOMSelectors.location.value = "";
-  };
+  }
   function erase() {
-    let remove = document.getElementById("erase");
-    let card = document.getElementById("card");
-    remove.addEventListener("click", function () {
-      card.remove();
+    let remove = document.querySelectorAll(".erase");
+    remove.forEach((eachRemove) => {
+      eachRemove.addEventListener("click", (event => {
+        event.target.parentElement.remove();
+      }));
     });
-    };
+  }
   makeCard();
-  erase();    
+  erase();
 });
 
 DOMSelectors.wd.addEventListener("click", function () {
   const addCSS = (css) =>
     (document.head.appendChild(document.createElement("style")).innerHTML =
       css);
-  addCSS("body{ font-family:wingdings }")
+  addCSS("body{ font-family:wingdings }");
 });
