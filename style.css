@@ -7,7 +7,6 @@ html {
   font-size: 62.5%;
 }
 
-
 h1 {
   font-size: 5rem;
 }
@@ -45,19 +44,21 @@ h2 {
   vertical-align: middle;
   transform: perspective(1px) translateZ(0);
   box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  opacity: 0;
 }
 @keyframes boo {
-  50% {
-    transform: scale(3);
+  100% {
+    transform: scale(100);
   }
 }
 .gaster:hover,
 .gaster:focus,
 .gaster:active {
   animation-name: boo;
-  animation-duration: 0.3s;
+  animation-duration: 0.13s;
   animation-timing-function: linear;
   animation-iteration-count: 1;
+  opacity: 1;
 }
 .WD {
   font-size: 2rem;
