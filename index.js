@@ -13,6 +13,7 @@ console.log(DOMSelectors);
 DOMSelectors.button.addEventListener("click", function (card) {
   card.preventDefault();
   makeCard();
+  refreshInput();
   erase();
 });
 
@@ -29,6 +30,9 @@ function makeCard() {
   <h3 id="city">At: ${location}</h3>
   <button class="erase">Erase</button> </div>`
   );
+}
+
+function refreshInput() {
   DOMSelectors.name.value = "";
   DOMSelectors.age.value = "";
   DOMSelectors.location.value = "";
